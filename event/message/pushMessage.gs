@@ -1,13 +1,13 @@
 function notyfyTakingOutTrash() {
   const url = 'https://api.line.me/v2/bot/message/push';
   // チャネルアクセストークン
-  const token = 'Mif7641lvCzuosOkVo4hk2dhLsUkj2z7PXJ6ydo0XjKWe/t4C7bXcSyzcSOrI9eokCsgqYaknd5j0lm5scuPe5baMD1wbBbnzOMh8985WzGXWM6DTSltyxyx5wvPeNWJtKJm1gi43FRLIZQqB1d1nAdB04t89/1O/w1cDnyilFU='; 
+  const chanelAccessToken = 'Mif7641lvCzuosOkVo4hk2dhLsUkj2z7PXJ6ydo0XjKWe/t4C7bXcSyzcSOrI9eokCsgqYaknd5j0lm5scuPe5baMD1wbBbnzOMh8985WzGXWM6DTSltyxyx5wvPeNWJtKJm1gi43FRLIZQqB1d1nAdB04t89/1O/w1cDnyilFU='; 
 
   const date = new Date()
   const dayOfToday = getDayOfWeekStr_(date);
-  var message = getMessageAboutTrash_(date);
+  let message = getMessageAboutTrash_(date);
   if (!message)
-    message = '今日はゴミの日ではありません';
+    return;
 
   const payload = {
     // ユーザーID
@@ -28,7 +28,7 @@ function notyfyTakingOutTrash() {
     method: 'post',
     contentType: 'application/json',
     headers: {
-      Authorization: 'Bearer ' + token
+      Authorization: 'Bearer ' + chanelAccessToken
     },
     // オブジェクトをJSONに変換
     payload: JSON.stringify(payload)
@@ -39,13 +39,18 @@ function notyfyTakingOutTrash() {
 }
 
 function getMessageAboutTrash_(date) {
+  let message;
+  let member = '徳田龍輝'
   const weekOfMonth = getWeekOfMonth_(date);
   const dayOfWeek = getDayOfWeekStr_(date);
   
-  if (['火曜日', '金曜日'].includes(dayOfWeek)) 
-    return '燃えるゴミの日です！';
-  else if (dayOfWeek == '月曜日')
-    return '燃えないゴミの日です！';
+  if (['火曜日', '金曜日'].includes(dayOfWeek)) {
+    message = `燃えるゴミの日です！\n${member}さんよろしくお願いします‼`;
+  }
+  else if (dayOfWeek == '月曜日') {
+    message = `燃えないゴミの日です！\n${member}さんよろしくお願いします‼`;
+  }
+    return message;
 }
 
 // 何週間目か返す

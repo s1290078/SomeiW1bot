@@ -1,0 +1,18 @@
+【初心者向け】GASで日付から何のゴミの日かを調べる関数のつくり方 for ゴミ出しLINE Bot
+https://tonari-it.com/gas-what-trash-day/
+
+VSCodeを使ってGASの開発を行う方法【clasp】
+https://somachob.com/gas-vscode/
+
+clasp の push で package.json が求められる #gas
+https://su-kun1899.hatenablog.com/entry/2022/02/21/090000
+
+[Google Apps Script] clasp 入門
+claspIdを変更することでpush先を変更できる
+https://www.d-wood.com/blog/2019/07/30_11378.html
+
+Google Apps Scriptでオウム返しLINE Botを作る。
+https://qiita.com/tetrapod117/items/e7b48485c98f6b88f311
+
+GASでウェブアプリケーション公開方法と実行・アクセスユーザー設定を解説
+https://auto-worker.com/blog/?p=3565
