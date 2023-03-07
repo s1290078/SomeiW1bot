@@ -7,8 +7,8 @@ function doPost(e) {
   let json = JSON.parse(e.postData.contents);
 
   //返信するためのトークン取得
-  let reply_token= json.events[0].replyToken;
-  if (typeof reply_token === 'undefined') {
+  let replyToken= json.events[0].replyToken;
+  if (typeof replyToken === 'undefined') {
     return;
   }
 
@@ -16,14 +16,14 @@ function doPost(e) {
   let message = json.events[0].message.text;  
 
   // メッセージを返信    
-  UrlFetchApp.fetch(line_endpoint, {
+  UrlFetchApp.fetch(lineEndpoint, {
     'headers': {
       'Content-Type': 'application/json; charset=UTF-8',
-      'Authorization': 'Bearer ' + CHANNEL_ACCESS_TOKEN,
+      'Authorization': 'Bearer ' + chanelAccessToken,
     },
     'method': 'post',
     'payload': JSON.stringify({
-      'replyToken': reply_token,
+      'replyToken': replyToken,
       'messages': [{
         'type': 'text',
         'text': message,
