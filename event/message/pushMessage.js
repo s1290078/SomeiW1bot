@@ -1,13 +1,20 @@
-function notyfyTakingOutTrash() {
-  const url = 'https://api.line.me/v2/bot/message/push';
+// pushメッセージ用URL
+const url = 'https://api.line.me/v2/bot/message/push';
+
+function setting() {
   // チャネルアクセストークン
   const chanelAccessToken = 'Mif7641lvCzuosOkVo4hk2dhLsUkj2z7PXJ6ydo0XjKWe/t4C7bXcSyzcSOrI9eokCsgqYaknd5j0lm5scuPe5baMD1wbBbnzOMh8985WzGXWM6DTSltyxyx5wvPeNWJtKJm1gi43FRLIZQqB1d1nAdB04t89/1O/w1cDnyilFU='; 
+}
 
+function notyfyTakingOutTrash() {
+  setting();
   const date = new Date()
   const dayOfToday = getDayOfWeekStr_(date);
   let message = getMessageAboutTrash_(date);
-  if (!message)
+  if (!message){
+    console.log('a');
     return;
+  }
 
   const payload = {
     // ユーザーID
@@ -20,6 +27,42 @@ function notyfyTakingOutTrash() {
       {
         type: 'text',
         text: message
+      }
+    ]
+  };
+
+  const params = {
+    method: 'post',
+    contentType: 'application/json',
+    headers: {
+      Authorization: 'Bearer ' + chanelAccessToken
+    },
+    // オブジェクトをJSONに変換
+    payload: JSON.stringify(payload)
+  };
+  
+  // GASでHTTPリクエストを行う
+  UrlFetchApp.fetch(url, params);
+}
+
+function notyfyMeeting() {
+  setting();
+  const date = new Date()
+  const dayOfToday = getDayOfWeekStr_(date);
+  if (dayOfToday != '日曜日')
+    return;
+
+  const payload = {
+    // ユーザーID
+    to: 'U6616557a5378302e99c925ab5c5c85a2',　
+    messages: [
+      { 
+        type: 'text',
+        text: `今日は${dayOfToday}!` 
+      },
+      {
+        type: 'text',
+        text: '21:00からミーティングになります。\n参加できない方はSRAにご連絡ください。'
       }
     ]
   };
