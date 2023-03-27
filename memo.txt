@@ -16,3 +16,6 @@ https://qiita.com/tetrapod117/items/e7b48485c98f6b88f311
 
 GASでウェブアプリケーション公開方法と実行・アクセスユーザー設定を解説
 https://auto-worker.com/blog/?p=3565
+
+メモ
+新しくデプロイしないとクイックリプライなどの機能は更新されないので、デプロイする

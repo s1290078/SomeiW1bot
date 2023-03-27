@@ -6,19 +6,20 @@ function setting() {
   const chanelAccessToken = 'Mif7641lvCzuosOkVo4hk2dhLsUkj2z7PXJ6ydo0XjKWe/t4C7bXcSyzcSOrI9eokCsgqYaknd5j0lm5scuPe5baMD1wbBbnzOMh8985WzGXWM6DTSltyxyx5wvPeNWJtKJm1gi43FRLIZQqB1d1nAdB04t89/1O/w1cDnyilFU='; 
 }
 
+// ゴミ出しを通知する
 function notyfyTakingOutTrash() {
   setting();
   const date = new Date()
   const dayOfToday = getDayOfWeekStr_(date);
   let message = getMessageAboutTrash_(date);
   if (!message){
-    console.log('a');
+    console.log(`${dayOfToday}`);
     return;
   }
 
   const payload = {
     // ユーザーID
-    to: 'U6616557a5378302e99c925ab5c5c85a2',　
+    to: 'U6616557a5378302e99c925ab5c5c85a2',
     messages: [
       { 
         type: 'text',
@@ -45,6 +46,7 @@ function notyfyTakingOutTrash() {
   UrlFetchApp.fetch(url, params);
 }
 
+// ミーティングを通知する
 function notyfyMeeting() {
   setting();
   const date = new Date()
@@ -54,7 +56,7 @@ function notyfyMeeting() {
 
   const payload = {
     // ユーザーID
-    to: 'U6616557a5378302e99c925ab5c5c85a2',　
+    to: 'U6616557a5378302e99c925ab5c5c85a2',
     messages: [
       { 
         type: 'text',
@@ -81,6 +83,7 @@ function notyfyMeeting() {
   UrlFetchApp.fetch(url, params);
 }
 
+// ゴミ出しの詳細を返す
 function getMessageAboutTrash_(date) {
   let message;
   let member = '徳田龍輝'
