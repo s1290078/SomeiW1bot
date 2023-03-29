@@ -89,12 +89,18 @@ function getMessageAboutTrash_(date) {
   let member = '徳田龍輝'
   const weekOfMonth = getWeekOfMonth_(date);
   const dayOfWeek = getDayOfWeekStr_(date);
+  const trash1 = '・かん類\n・ペットボトル\n・プラスチック製包装容器\n・古紙類\n・燃やせないごみ'
+  const trash2 = '・びん類\n・プラスチック製包装容器\n・古紙類'
   
   if (['火曜日', '金曜日'].includes(dayOfWeek)) {
-    message = `燃えるゴミの日です！\n${member}さんよろしくお願いします‼`;
+    message = `燃えるゴミの日です！\n${member}さんよろしくお願いします!`;
   }
   else if (dayOfWeek == '月曜日') {
-    message = `燃えないゴミの日です！\n${member}さんよろしくお願いします‼`;
+    if (weekOfMonth % 2 != 0 && weekOfMonth < 6){
+      message = `燃えないゴミの日です！\n${member}さんよろしくお願いします！\n${trash1}`;
+    }else {
+      message = `燃えないゴミの日です！\n${member}さんよろしくお願いします！\n${trash2}`;
+    }
   }
     return message;
 }
