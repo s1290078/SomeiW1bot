@@ -11,7 +11,9 @@ function notyfyTakingOutTrash() {
   setting();
   const date = new Date()
   const dayOfToday = getDayOfWeekStr_(date);
+  const weekOfMonth = getWeekOfMonth_(date);
   let message = getMessageAboutTrash_(date);
+  console.log(`${weekOfMonth}`);
   if (!message){
     console.log(`${dayOfToday}`);
     return;
@@ -51,7 +53,7 @@ function notyfyMeeting() {
   setting();
   const date = new Date()
   const dayOfToday = getDayOfWeekStr_(date);
-  if (dayOfToday != '日曜日')
+  if (dayOfToday != '土曜日')
     return;
 
   const payload = {
@@ -107,7 +109,8 @@ function getMessageAboutTrash_(date) {
 
 // 何週間目か返す
 function getWeekOfMonth_(date){
-  return Math.floor((date.getDate() - 1) / 7) + 1;
+  
+  return Math.floor((date.getDate() - date.getDay() + 12 ) / 7);
 }
 
 // 曜日を返す
