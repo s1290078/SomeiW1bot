@@ -1,5 +1,5 @@
 // LINE Developersで取得したアクセストークンを入れる
-let chanelAccessToken = 'Mif7641lvCzuosOkVo4hk2dhLsUkj2z7PXJ6ydo0XjKWe/t4C7bXcSyzcSOrI9eokCsgqYaknd5j0lm5scuPe5baMD1wbBbnzOMh8985WzGXWM6DTSltyxyx5wvPeNWJtKJm1gi43FRLIZQqB1d1nAdB04t89/1O/w1cDnyilFU=';
+let chanelAccessToken = '';
 let lineEndpoint = 'https://api.line.me/v2/bot/message/reply';
 
 function doPost(e) {
