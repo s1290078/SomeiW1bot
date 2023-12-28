@@ -14,16 +14,16 @@ LINEbotとして運用することで通知を確認しやすいようにした�
 Googleスプレッドシートと連携してデータを取得している。
 
 ## 機能
-・指定した時刻に曜日ごとに出すゴミの種類と担当者を自動通知する。
+<p>・指定した時刻に曜日ごとに出すゴミの種類と担当者を自動通知する。</p>
 
-<img src="https://github.com/s1290078/SomeiW1bot/assets/108910839/343eb0eb-4d83-44b2-9f31-c0d6f7bd1395" alt="IMG_6489" width="400">
+<img src="https://github.com/s1290078/SomeiW1bot/assets/108910839/343eb0eb-4d83-44b2-9f31-c0d6f7bd1395" alt="IMG_6489" width="200">
 
 
-・指定した時刻に寮内掃除時間を自動通知する。
+<p>・指定した時刻に寮内掃除時間を自動通知する。</p>
 
 ![IMG_6490](https://github.com/s1290078/SomeiW1bot/assets/108910839/a19c1071-ad33-4071-80dc-a01fc4a684ef)
 
-・任意のメッセージを送信すると要件を問われ、クイックリプライによるメッセージを選択するとそれに応じた返信が返ってくる。
+<p>・任意のメッセージを送信すると要件を問われ、クイックリプライによるメッセージを選択するとそれに応じた返信が返ってくる。</p>
 
 ![IMG_6485](https://github.com/s1290078/SomeiW1bot/assets/108910839/34d18728-1cbc-4bda-8d46-ebd0fd27347e)
 ![IMG_6487](https://github.com/s1290078/SomeiW1bot/assets/108910839/db5edd86-480c-4370-bb55-e9ecc7888b9a)
